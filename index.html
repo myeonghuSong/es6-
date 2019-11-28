@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const map = (f, iter) => {
+        let res = [];
+        for(const a of iter) {
+            res.push(f(a));
+        }
+        return res;
+    }
+    console.log(map(el => el.nodeName, document.querySelectorAll('*')));
+
+    function *gen() {
+        yield 2;
+        if(false) yield 3;
+        yield 4;
+    }
+    console.log(map(a => a * a, gen()))
+ </script>
+</html>

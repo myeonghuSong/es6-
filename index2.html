@@ -41,3 +41,32 @@
 
     log(f(0, 1));
 </script>
+
+<script>
+    go(
+        products,
+        filter(p => p.price < 20000),
+        map(p => p.price),
+        reduce(add),
+        log
+    );
+
+    go(
+        products,
+        filter(p => p.price < 20000),
+        map(p => p.price),
+        reduce(add),
+        log
+    );
+</script>
+
+<script>
+
+    const mult = curry((a, b) => a * b);
+    log(mult(3)(2));
+
+    const mult3 = mult(3);
+    log(mult3(10));
+    log(mult3(5));
+    log(mult3(3));
+</script>

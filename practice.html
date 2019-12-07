@@ -1,0 +1,36 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 출력해보기 - 장바구니</title>
+    <script src="./pra.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    const products = [
+            { name: '반팔티', price: 15000, quantity: 1 },
+            { name: '긴팔티', price: 20000, quantity: 2 },
+            { name: '핸드폰케이스', price: 15000, quantity: 3 },
+            { name: '후드티', price: 30000, quantity: 4 },
+            { name: '바지', price: 25000, quantity: 5 },
+        ];
+    
+    log(reduce(add, map(p => p.price, filter(p => p.price < 20000, products))));
+    
+    const go = (...args) => {
+        reduce((a, f) => f(a), args);
+    }
+
+    go(
+        0,
+        a => a + 1,
+        a => a + 10,
+        a => a+ 100,
+        log);
+</script>
+
+</html>
+
